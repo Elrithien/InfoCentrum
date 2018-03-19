@@ -1,0 +1,64 @@
+{% extends 'head_menu.html' %}
+
+{% block title %}
+    <title>Goście</title>
+{% endblock %}
+
+{% block content %}
+<h2>Lista gości:</h2>
+<table border="1px solid black">
+    <thead>
+    <tr>
+        <th>Data i godzina</th>
+        <th>Ilość</th>
+        <th>Kraj</th>
+        <th>Cel</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for guest in guests %}
+        <tr>
+            <th>{{ guest.date }}</th>
+            <th>{{ guest.count }}</th>
+            <th>{{ guest.guests_coutntry }}</th>
+            <th>{% for purpose in guest.guests_purpose.all %}
+                {{ purpose }}
+            {% endfor %}</th>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+<h2>Dodaj gości:</h2>
+
+    {% if form.has_errors %}
+        <ol>
+            {% for e in form.errors %}
+                <li>{{ e }}</li>
+            {% endfor %}
+        </ol>
+    {% endif %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+            <input type="number" name="materials_quantity" min="0" step="1" max="500"
+                   placeholder="Ilość materiałów"><br><br>
+            Cele:<input type="text" name="purposes" placeholder="Wybierz cel">
+            <div id="result"></div>
+            <br>
+
+        </table>
+
+        <br>
+        <input type="submit" value="Dodaj"/>
+    </form>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    {% load static %}
+    <script src="{% static '/js/search.js' %}"></script>
+{% endblock %}

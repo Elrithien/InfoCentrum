@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Firmy</title>
+    <link rel="stylesheet" href="../static/style/css.css">
+</head>
+<body>
+    <table>
+        <td class="logo"><a href="/"><img src="../static/img/logo1.jpg" width=200px height=95px title="logo" alt="logo"></a></td>
+        <<td class="menu"><a href="/add_guest">Dodaj gościa</a></td>
+        <td class="menu">Widok dnia</td>
+        <td class="menu">Widok miesiąca</td>
+        <td class="menu">Widok roku</td>
+        <td class="menu"><a href="/statistic">Statystyki</a></td>
+        <td class="menu"><a href="/purposes">Widok celi</a></td>
+        <td class="menu"><a href="/materials">Materiały</a></td>
+    </table>
+    <br>
+    <table>
+        <td><a href="">Osoby</a></td>
+        <td><a href="/materials">Materiały</a></td>
+        <td><a href="/material_add">Dodaj materiały</a></td>
+        <td><a href="/material_persons_add">Dodaj osobę</a></td>
+        <td><a href="">Dodaj firmę</a></td>
+    </table>
+    <h3>Firmy:</h3>
+    <table border="1px solid black">
+        <tr>
+            <th>Firma</th>
+            <th>Strona www</th>
+            <th colspan="2"></th>
+        </tr>
+        {% for brand in brands %}
+        <tr>
+            <td>{{ brand.name }}</td>
+            <td>{{ brand.website }}</td>
+            <td><img src="../static/img/edit.png" width=15px height=15px></td>
+            <td><img src="../static/img/delete.png"></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

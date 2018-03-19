@@ -1,0 +1,70 @@
+{% extends 'head_menu.html' %}
+
+
+
+{% block title %}
+    <title>Kraje</title>
+{% endblock %}
+
+
+
+{% block content %}
+
+    <h3>Kraje:</h3>
+    <table border="1px solid black" style="font-size: 11px">
+        <thead style="font-weight: bold; text-align: center">
+            <tr>
+                <td colspan="4" class="europe_head">Suma: { suma }</td>
+                <td colspan="4" class="asia_head">Suma: { suma }</td>
+                <td colspan="4" class="america_head">Suma: { suma }</td>
+                <td colspan="4" class="america_head">Suma: { suma }</td>
+                <td colspan="4" class="australia_head">Suma: { suma }</td>
+                <td colspan="4" class="africa_head">Suma: { suma }</td>
+                <td colspan="4">Suma: { suma }</td>
+            </tr>
+            <tr>
+                <td class="europe_head">%</td>
+                <td colspan="3" class="europe_head">Europa</td>
+                <td class="asia_head">%</td>
+                <td colspan="3" class="asia_head">Azja</td>
+                <td class="america_head">%</td>
+                <td colspan="3" class="america_head">Am. Północna</td>
+                <td class="america_head">%</td>
+                <td colspan="3" class="america_head">Am. Południowa</td>
+                <td class="australia_head">%</td>
+                <td colspan="3" class="australia_head">Australia i Oceania</td>
+                <td class="africa_head">%</td>
+                <td colspan="3" class="africa_head">Afryka</td>
+                <td>%</td>
+                <td colspan="3">Nieokreślony</td>
+            </tr>
+            <tr>
+                <td class="europe_head">Ilość</td><td class="europe_head">% kont</td><td class="europe_head">% cał</td><td class="europe_head">Państwo</td>
+                <td class="asia_head">Ilość</td><td class="asia_head">% kont</td><td class="asia_head">% cał</td><td class="asia_head">Państwo</td>
+                <td class="america_head">Ilość</td><td class="america_head">% kont</td><td class="america_head">% cał</td><td class="america_head">Państwo</td>
+                <td class="america_head">Ilość</td><td class="america_head">% kont</td><td class="america_head">% cał</td><td class="america_head">Państwo</td>
+                <td class="australia_head">Ilość</td><td class="australia_head">% kont</td><td class="australia_head">% cał</td><td class="australia_head">Państwo</td>
+                <td class="africa_head">Ilość</td><td class="africa_head">% kont</td><td class="africa_head">% cał</td><td class="africa_head">Państwo</td>
+                <td>Ilość</td><td>% kont</td><td>% cał</td><td>Państwo</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for country in longest %}
+            <tr>
+                <td class="europe_body"></td><td class="europe_body"></td><td class="europe_body"></td><td class="europe_body">{{ country.0 }}</td>
+                <td class="asia_body"></td><td class="asia_body"></td><td class="asia_body"></td><td class="asia_body">{{ country.1 }}</td>
+                <td class="america_body"></td><td class="america_body"></td><td class="america_body"></td><td class="america_body">{{ country.2 }}</td>
+                <td class="america_body"></td><td class="america_body"></td><td class="america_body"></td><td class="america_body">{{ country.3 }}</td>
+                <td class="australia_body"></td><td class="australia_body"></td><td class="australia_body"></td><td class="australia_body">{{ country.4 }}</td>
+                <td class="africa_body"></td><td class="africa_body"></td><td class="africa_body"></td><td class="africa_body">{{ country.5 }}</td>
+                <td></td><td></td><td></td><td>{{ country.6 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj gościa</title>
+    <link href="../static/style/css.css" rel="stylesheet">
+</head>
+<body>
+{% block header %}
+    <table>
+        <td class="logo"><a href="main.html"><img src="../static/img/logo1.jpg" width=200px height=95px title="logo" alt="logo"></a></td>
+        <td class="menu"><a href="/add_guest">Dodaj gościa</a></td>
+        <td class="menu">Widok dnia</td>
+        <td class="menu">Widok miesiąca</td>
+        <td class="menu">Widok roku</td>
+        <td class="menu"><a href="/statistic">Statystyki</a></td>
+        <td class="menu"><a href="/purposes">Widok celi</a></td>
+        <td class="menu"><a href="/materials">Materiały</a></td>
+    </table>
+{% endblock %}<br><br>
+
+{% block guest_list %}
+    <a>Odwiedzili nas dzisiaj:</a>
+    <table border="1px solid black">
+        <thead>
+        <tr>
+            <th>Data i godzina</th>
+            <th>Ilość</th>
+            <th>Kraj</th>
+            <th>Cel wizyty</th>
+            <th>Materiały</th>
+            <th>Edytuj</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            {% for guest in guests %}
+                <td>{{ guest.datetime }}</td>
+                <td>{{ guest.count }}</td>
+                <td>{{ guest.country }}</td>
+                <td>{{ guest.purpose }}</td>
+                <td>{{ guest.material }}</td>
+                <td><center><a><img src="../static/img/edit.png"></a></center></td>
+            {% endfor %}
+
+            {% for book in books %}
+            <h2>Autor: {{ book.author }}, Tytuł: <a href='/book/{{ book.id }}'>{{ book.title }}</a></h2>
+            Cena: {{ book.price }}<br>
+            Ocena: {{ book.rating }}<br>
+            {% endfor %}
+
+        {% endblock %}
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}<br><br>
+{% block add_guest %}
+    <a>Dodaj gościa</a>
+    <table border="1px solid black">
+        <thead>
+        <tr>
+            <th>Data i godzina</th>
+            <th>Ilość</th>
+            <th>Kraj</th>
+            <th>Cel wizyty</th>
+            <th>Materiały</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><input type="datetime-local" name="datetime"></td>
+            <td><input type="number" min=1 step=1 name="count"></td>
+            <td><select name="country"></td>
+            <td><select name="purpose"></td>
+            <td><select name="material"></td>
+        </tr>
+        <tr>
+            <td colspan="4"></td>
+            <td><input type="submit" value="Dodaj gościa"></td>
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}
+<br><br>
+</body>
+</html>

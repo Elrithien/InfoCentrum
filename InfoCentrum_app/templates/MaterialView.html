@@ -1,0 +1,40 @@
+{% extends 'head_menu.html' %}
+
+{% block title %}
+    <title>Kontynenty</title>
+{% endblock %}
+
+{% block content %}
+   {% load static %}
+    <table>
+        <td><a href="/material_persons">Osoby</a></td>
+        <td><a href="/brands">Firmy</a></td>
+        <td><a href="/material_add">Dodaj materiały</a></td>
+        <td><a href="/material_person_add">Dodaj osobę</a></td>
+        <td><a href="">Dodaj firmę</a></td>
+    </table>
+    <h3>Materiały:</h3>
+    <table border="1px solid black">
+        <tr>
+            <th>Nazwa</th>
+            <th>Typ</th>
+            <th>Przyniesiono przez</th>
+            <th>Firma</th>
+            <th>Data</th>
+            <th>Ilość</th>
+            <th colspan="2"></th>
+        </tr>
+        {% for material in materials %}
+        <tr>
+            <td>{{ material.name }}</td>
+            <td>{{ material.type }}</td>
+            <td>{{ material.person.name }}</td>
+            <td>{{ material.brand.name }}</td>
+            <td>{{ material.date }}</td>
+            <td>{{ material.quantity }}</td>
+            <td><img src="{% static '/img/edit.png' %}" width=15px height=15px></td>
+            <td><img src="{% static '/img/delete.png' %}"></td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

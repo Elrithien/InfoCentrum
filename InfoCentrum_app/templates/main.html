@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Strona główna</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/style/css.css' %}">
+</head>
+    <body class="back">
+
+        <div class="logo_main"><img src="{% static '/img/logo1.jpg' %}" title="logo" alt="logo" height=38% width=38%></div>
+            <br>
+
+
+
+
+    <center><table class="main_table">
+        <tr>
+            <td><a href="/add_guest"><div class="div_main">Goście</div></a></td>
+            <td><a href="/purposes"><div class="div_main">Cele</div></a></td>
+            <td><a href="/materials"><div class="div_main">Materiały</div></a></td>
+        </tr>
+        <tr>
+            <td><a href="day.html"><div class="div_main">Widok dnia</div></a></td>
+            <td><a href="month.html"><div class="div_main" style="font-size: 23px">Widok miesiąca</div></a></td>
+            <td><a href="year.html"><div class="div_main">Widok roku</div></a></td>
+        </tr>
+        <tr>
+            <td><a href="/statistic"><div class="div_main">Statystyki</div></a></td>
+            <td><a href="/countries"><div class="div_main">Kraje</div></a></td>
+            <td><a href="/continent"><div class="div_main">Kontynenty</div></a></td>
+        </tr>
+
+    </table></center>
+
+    <footer>
+        <div style="float:left">
+        <a href="http://www.infocentrum.wroclaw.pl/" target="_blank">Strona InfoCentrum</a>  |
+        <a href="https://www.facebook.com/infotumski/" target="_blank">Facebook</a>  |
+        <a href="https://www.tripadvisor.com/Attraction_Review-g274812-d10543721-Reviews-Info_Centrum_na_Ostrowie_Tumskim-Wroclaw_Lower_Silesia_Province_Southern_Poland.html" target="_blank">Trip Advisor</a></div>
+
+
+    </footer>
+    </body>
+</html>

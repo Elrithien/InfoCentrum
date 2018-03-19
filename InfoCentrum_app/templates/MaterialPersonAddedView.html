@@ -1,0 +1,19 @@
+{% extends 'head_menu.html' %}
+
+
+{% block title %}
+    <title>Osoba</title>
+{% endblock %}
+
+
+
+{% block content %}
+
+    {% csrf_token %}
+    {{ form.as_table }}
+    <h2>{{ material_name }}</h2>
+    Firma: {{material_person.brand}}<br>
+    Telefon: {{material_person.phone}}<br>
+    Email: {{material_person.email}}<br>
+
+{% endblock %}

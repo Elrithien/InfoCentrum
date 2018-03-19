@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>  </title>
+    {% endblock %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/style/css.css' %}">
+</head>
+<body>
+    {% block top_menu %}
+    <table>
+        <td class="logo"><a href="/"><img src="{% static '/img/logo1.jpg'%}" width=200px height=95px title="logo" alt="logo"></a></td>
+        <td class="menu"><a href="/add_guest">Dodaj gościa</a></td>
+        <td class="menu">Widok dnia</td>
+        <td class="menu">Widok miesiąca</td>
+        <td class="menu">Widok roku</td>
+        <td class="menu"><a href="/statistic">Statystyki</a></td>
+        <td class="menu"><a href="/purposes">Widok celi</a></td>
+        <td class="menu"><a href="/materials">Materiały</a></td>
+    </table>
+        <br>
+    {% endblock %}
+
+    {% block content %}
+
+    {% endblock %}
+
+</body>
+</html>

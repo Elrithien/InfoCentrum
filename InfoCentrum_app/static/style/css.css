@@ -1,0 +1,46 @@
+td.menu {
+    background-color: #ffdfce;
+    border:1px solid orangered;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.back {
+    background-color: #d6ddff;
+
+}
+
+div.logo_main {
+    text-align: center;
+}
+div.div_main {
+    border: 2px solid #8196ff;
+    float: left;
+    padding: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 60px;
+    width: 150px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 10%;
+    background-color: #d2f5ff;
+    font-size: x-large;
+
+}
+
+.main_table{
+    border: box;
+    text-align: center;
+}
+
+.africa_head {  background-color: #666666;  }
+.africa_body {  background-color: #DCDCDC;  }
+.asia_head {  background-color: #FED220;  }
+.asia_body {  background-color: #FEFECB;  }
+.america_head {  background-color: #FD9898;  }
+.america_body {  background-color: #F9C7C7;  }
+.australia_head {  background-color: #99FE66;  }
+.australia_body {  background-color: #CBFE99;  }
+.europe_head {  background-color: #99CBFE;  }
+.europe_body {  background-color: #CBFEFE;  }

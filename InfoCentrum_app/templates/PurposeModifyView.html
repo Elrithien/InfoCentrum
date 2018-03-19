@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Modyfikuj cel</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/style/css.css' %}">
+</head>
+<body>
+
+    <table>
+        <td class="logo"><a href="/"><img src="../static/img/logo1.jpg" width=200px height=95px title="logo" alt="logo"></a></td>
+        <td class="menu"><a href="/add_guest">Dodaj gościa</a></td>
+        <td class="menu">Widok dnia</td>
+        <td class="menu">Widok miesiąca</td>
+        <td class="menu">Widok roku</td>
+        <td class="menu"><a href="/statistic">Statystyki</a></td>
+        <td class="menu"><a href="/purposes">Widok celi</a></td>
+        <td class="menu"><a href="/materials">Materiały</a></td>
+    </table>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    <p>Modyfikuj cel: <i>{{ purpose.purpose }}</i></p>
+    <textarea cols="50" rows="15" name="modified_purpose" placeholder="Edytuj cel">{{ purpose.purpose }}</textarea><br>
+    <input type="submit" value="Zapisz">
+</form>
+
+<br>
+
+<a href="/purposes"><input type="submit"value="Powrót do celi"></a>
+
+
+</body>
+</html>
