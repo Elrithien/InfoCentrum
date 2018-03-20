@@ -146,31 +146,6 @@ class MaterialBrandView(View):
         return render(request, "MaterialBrandView.html", {'brands': brands})
 
 
-
-
-
-
-
-
-
-# class MaterialPersonAddedView(View):
-#     def get(self, request, material_person_id):
-#         try:
-#             material_person = MaterialPerson.objects.get(pk=material_person_id)
-#         except MaterialPerson.DoesNotExist:
-#             material_person = None
-#
-#
-#         ctx = {
-#             "material_person": material_person,
-#         }
-#
-#         return render(request, "MaterialPersonAddedView.html", ctx)
-
-
-
-
-
 ### =-=-=-=-=-=-= END Material (Material, Material Person, Material Brand =-=-=-=-=-=-=
 
 
