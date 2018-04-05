@@ -19,8 +19,6 @@ class MaterialPersonAddForm(ModelForm):
         }
 
 
-
-
 class AddGuestForm(ModelForm):
     class Meta:
         model = Guest
@@ -34,13 +32,11 @@ class AddGuestForm(ModelForm):
 
 
 class PurposeAddForm(forms.Form):
-
     purpose = forms.CharField(label='', max_length=100, widget=forms.Textarea)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['purpose'].widget.attrs.update({'placeholder': 'Dodaj cel'})
-
 
 
 class MaterialAddForm(ModelForm):

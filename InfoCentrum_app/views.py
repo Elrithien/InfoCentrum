@@ -44,10 +44,10 @@ class PurposeAddView(View):
             p = Purpose.objects.create(
                 purpose = form.cleaned_data['purpose'])
 
-
-            return redirect(reverse('add_purpose', args=[p.id]))
+            return redirect(reverse('purposes'))
 
         return render(request, "PurposeAddView.html", {'form': form})
+
 
 
 
@@ -68,6 +68,20 @@ def modify_purpose(request, id):
         modified_purpose = request.POST.get('modified_purpose')
         purpose.purpose = modified_purpose
         purpose.save()
+        return redirect('purposes')
+
+
+def delete_purpose(request, id):
+    purpose = Purpose.objects.get(id=id)
+    if request.method == 'GET':
+        context = {
+            'purpose': purpose
+        }
+        return render(request, "PurposeDeleteView.html", context=context)
+    elif request.method == 'POST':
+        deleted_purpose = request.POST.get('deleted_purpose')
+        purpose.purpose = deleted_purpose
+        purpose.delete()
         return redirect('purposes')
 
 

@@ -1,0 +1,18 @@
+{% extends 'head_menu.html' %}
+
+{% block title %}
+    <title>Usuń cel</title>
+{% endblock %}
+
+
+{% block content %}
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <p>Czy chcesz usunąć cel: <i><strong>{{ purpose.purpose }}</strong></i> ?</p>
+        <input type="submit" value="TAK, usuń cel">
+    </form>
+    <br>
+    <a href="/purposes"><input type="submit" value="NIE, powrót do celi"></a>
+{% endblock %}
